@@ -1,23 +1,25 @@
-# Источники и границы проверки
+# Sources and Verification Limits
 
-Проверка: 2026-10-03. Это журнал происхождения материала, а не заявление о полном рецензировании или воспроизведении всех работ.
+Source review: 2026-10-03. This record documents provenance; it does not claim full peer review or reproduction of every cited study. The English edition preserves the scientific content of the Russian source. [Russian record](SOURCES_ru.md).
 
-| Источник | Для чего используется | Что проверено |
+| Source | Role in the course | What was checked |
 | --- | --- | --- |
-| zero-to-sglang, SHA `2577007cc326f17651c41f6a886906deaa7e3088` | Педагогическая организация | Прочитаны глава о KV cache, части главы об inference, архитектурная глава и writing template. Текст и изображения не копировались. |
-| Druker et al., 1996, DOI `10.1038/nm0596-561` | Краткий пример ABL → клеточный рост в главе 1 | Библиография и авторское резюме через PubMed/orx, страница издателя. Не заявляется чтение всей статьи или воспроизведение экспериментов. |
-| Nagar et al., 2002, PMID `12154025` | Связь структуры ABL с иматинибом | Авторское резюме и первичная структурная запись 1IEP. Численные сравнительные результаты статьи не переносятся в курс. |
-| RCSB PDB 1IEP | Точная идентичность структурного объекта | Организм Mus musculus, киназный домен c-ABL, STI, рентгеновская дифракция, 2.10 Å. Структура не выдаётся за полный человеческий BCR–ABL. |
-| Weininger, 1988, DOI `10.1021/ci00057a005` | Историческая ссылка на SMILES | Метаданные оригинальной работы; текущие примеры структур сверяются с RDKit. Полнотекстового разбора этой статьи пока нет. |
-| Anfinsen, 1973, DOI `10.1126/science.181.4096.223` | Исторический вход в тему сворачивания | Метаданные PubMed и библиографическая связь с Нобелевской лекцией. Доступ к NobelPrize.org/PDF вернул 403. Источник оставлен для дальнейшего чтения; количественные данные из него не использованы. |
-| Monod, Wyman & Changeux, 1965, DOI `10.1016/S0022-2836(65)80285-6` | Конформационные состояния и аллостерия | Метаданные PubMed; оригинальный PDF из университетского архива NYU. Прочитаны введение и предпосылки модели. Её теория не приравнивается ко всем механизмам аллостерии. |
-| Jarmoskaite et al., 2020, DOI `10.7554/eLife.57264`, PMC7452723 | Равновесие, концентрационный режим, кинетика | Открытый полный текст получен через Europe PMC. Прочитаны разделы о времени установления равновесия и расходовании связываемого компонента. Не воспроизводились биологические эксперименты. |
-| RDKit Getting Started | Генерация структурных изображений | Официальная документация, фактическая генерация RDKit 2026.03.6. SMILES всех шести изображений записаны в `course-material/ru/part1/images/provenance.json`. |
-| McMurry / OpenStax, Acid and Base Strength | Фон по кислотности и pKa | Прочитан соответствующий учебный раздел. Числа pKa в задачах выбраны автором как учебные; изображения и задания источника не копировались. |
-| Harvard HMX, MIT–Harvard PPDD, Stanford CS279 | Предметная карта и организация обучения | Открытые программы проверены ранее в этой сессии; подробный обзор находится в общем репозитории серии. |
+| zero-to-sglang, SHA `2577007cc326f17651c41f6a886906deaa7e3088` | Teaching organization | The KV-cache chapter, parts of the inference chapter, the architecture chapter, and writing template were read. Text and images were not copied. |
+| Druker et al., 1996, DOI `10.1038/nm0596-561` | Brief ABL → cellular growth example in Chapter 1 | Bibliography and author abstract through PubMed/orx, plus the publisher page. No claim of full-paper reading or experimental reproduction. |
+| Nagar et al., 2002, PMID `12154025` | ABL structure and imatinib | Author abstract and primary structure entry 1IEP. Numerical comparisons reported in the paper are not imported into the course. |
+| RCSB PDB 1IEP | Precise identity of the structural object | Mus musculus, c-ABL kinase domain, STI, X-ray diffraction, 2.10 Å. It is not presented as full-length human BCR–ABL. |
+| Weininger, 1988, DOI `10.1021/ci00057a005` | Historical SMILES reference | Original paper metadata; current structure examples checked with RDKit. No full-text analysis of this paper has been performed. |
+| Anfinsen, 1973, DOI `10.1126/science.181.4096.223` | Historical introduction to folding | PubMed metadata and bibliographic connection to the Nobel Lecture. NobelPrize.org/PDF access returned 403. Retained for further reading; no quantitative data taken from it. |
+| Monod, Wyman & Changeux, 1965, DOI `10.1016/S0022-2836(65)80285-6` | Conformational states and allostery | PubMed metadata and the original PDF from an NYU university archive. Introduction and model assumptions read. The theory is not treated as covering every allosteric mechanism. |
+| Jarmoskaite et al., 2020, DOI `10.7554/eLife.57264`, PMC7452723 | Equilibrium, concentration regimes, and kinetics | Open full text obtained through Europe PMC. Sections on equilibration time and depletion of a binding component read. Biological experiments were not reproduced. |
+| RDKit Getting Started | Molecular drawings | Official documentation and actual figure generation with RDKit 2026.03.6. SMILES for all six molecular drawings are recorded in each edition's figure provenance file. |
+| McMurry / OpenStax, Acid and Base Strength | Background on acidity and pKa | Relevant textbook section read. Exercise pKa values were chosen as hypothetical examples; source figures and exercises were not copied. |
+| Harvard HMX, MIT–Harvard PPDD, Stanford CS279 | Subject map and teaching organization | Public syllabi checked earlier in the same project. A detailed comparison is maintained in the umbrella repository. |
 
-## Иллюстрации и расчёты
+## Figures and Calculations
 
-Все семь SVG созданы для курса. Схемы являются концептуальными; проекции Ньюмена показывают заданные углы 180° и 60° для бутана и не изображают расчёт его энергии. Кривые строятся по аналитическим формулам; параметры учебные, а не измеренные. Структурные изображения генерируются из явных SMILES. Скрипт генерации: `scripts/render_figures.py`; версии и исходные параметры: `course-material/ru/part1/images/provenance.json`. PNG рядом с графиками предназначены для предварительного просмотра, сайт использует SVG.
+The seven SVGs in each edition were created for this course. Conceptual diagrams are schematic. The Newman projections show specified 180° and 60° butane dihedrals, not calculated energies. Curves come from analytical equations with hypothetical parameters, not measurements. Molecular drawings are generated from explicit SMILES.
 
-Упражнения, разборы и расчёты оригинальные. Они не воспроизводят задачи Stanford/MIT или zero-to-sglang. Характеристики реальных препаратов не выводятся из условных графиков.
+The shared generator is `scripts/render_figures.py`. Use `--language eng`, `--language ru`, or `--language all`. The versions, molecule definitions, and parameters are recorded in `course-material/<language>/part1/images/provenance.json`. PNG versions are previews; chapters use SVGs.
+
+Exercises, discussions, and calculations are original. They do not reproduce Stanford/MIT or zero-to-sglang assignments. Properties of real drugs are not inferred from the illustrative plots.

@@ -10,7 +10,7 @@
 
 A hands-on course: understand molecules, proteins, and binding; work through simple computational models; then explore real research data and tools.
 
-> **Course status:** Part 0, Chapters 1–4 of Part I, and two practical chapters in Part II are written. The remaining material is under development. **Course chapters are currently available in Russian.** This repository overview is available in [English](README.md) and [Русский](README_ru.md).
+> **Course status:** Part 0, Chapters 1–4 of Part I, and two practical chapters in Part II are written. The remaining material is under development. **All currently written chapters are available in English and Russian.** This repository overview is available in [English](README.md) and [Русский](README_ru.md).
 
 ## About
 
@@ -37,41 +37,41 @@ This is Volume 0 of the **Computational Drug Discovery** series. Subsequent repo
 
 ## Syllabus
 
-Status legend: ✅ written and technically checked · 🚧 planned. This first edition has not yet been piloted with a group of learners. **All linked course material below is in Russian.**
+Status legend: ✅ written and technically checked · 🚧 planned. This first edition has not yet been piloted with a group of learners. **The links below open the English edition.**
 
 | Chapter | Key content | Status |
 | --- | --- | --- |
 | **Part 0 — Before you learn** | | |
-| [0.1 Learning and participating in an open course](course-material/ru/part0/Part0-Learning-and-Open-Science.md) | Working with explanations, sources, and exercises | ✅ |
-| [0.2 Environment setup](course-material/ru/part0/Part0-Environment-Setup.md) | Python, first runs, and checks | ✅ |
+| [0.1 Learning and participating in an open course](course-material/eng/part0/Part0-Learning-and-Open-Science.md) | Working with explanations, sources, and exercises | ✅ |
+| [0.2 Environment setup](course-material/eng/part0/Part0-Environment-Setup.md) | Python, first runs, and checks | ✅ |
 | **Part I — Foundations** | | |
-| [1. From disease to molecule](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md) | Targets, hits, and leads; computation and experiment | ✅ |
-| [2. Reading molecules](course-material/ru/part1/Chapter2_Reading-Molecules.md) | Bonds, shape, stereochemistry, charge, and environment | ✅ |
-| [3. Proteins in motion](course-material/ru/part1/Chapter3_Proteins-in-Motion.md) | Sequence, structure, states, and function | ✅ |
-| [4. What does “binding” mean?](course-material/ru/part1/Chapter4_Molecular-Binding.md) | Kd, occupancy, free energy, and kinetics | ✅ |
+| [1. From disease to molecule](course-material/eng/part1/Chapter1_From-Disease-to-Molecule.md) | Targets, hits, and leads; computation and experiment | ✅ |
+| [2. Reading molecules](course-material/eng/part1/Chapter2_Reading-Molecules.md) | Bonds, shape, stereochemistry, charge, and environment | ✅ |
+| [3. Proteins in motion](course-material/eng/part1/Chapter3_Proteins-in-Motion.md) | Sequence, structure, states, and function | ✅ |
+| [4. What does “binding” mean?](course-material/eng/part1/Chapter4_Molecular-Binding.md) | Kd, occupancy, free energy, and kinetics | ✅ |
 | 5. What does an experiment measure? | Assays, dose–response, Kd / Ki / IC50 / EC50 | 🚧 |
 | 6. Molecules and proteins as data | SMILES, graphs, fingerprints, PDB, and identifiers | 🚧 |
 | 7. What can a computational model tell us? | Physical and ML models, baselines, and prediction evaluation | 🚧 |
 | **Part II — Working through models yourself** | | |
-| [1. Molecular identity](course-material/ru/part2/Chapter1_Molecular-Identity.md) | Graphs, atom labels, and renumbering | ✅ |
-| [2. A binding model](course-material/ru/part2/Chapter2_Binding-Model.md) | Occupancy, mass balance, energy, and complex lifetime | ✅ |
+| [1. Molecular identity](course-material/eng/part2/Chapter1_Molecular-Identity.md) | Graphs, atom labels, and renumbering | ✅ |
+| [2. A binding model](course-material/eng/part2/Chapter2_Binding-Model.md) | Occupancy, mass balance, energy, and complex lifetime | ✅ |
 | 3. Your first research analysis | Structures and measurements → reproducible analysis | 🚧 |
 | **Part III — Exploring real tools** | | |
 | 1. How RDKit represents a molecule | Connecting the models you have learned to a real toolkit | 🚧 |
 | 2. Reading structural and biochemical data | From a PDB entry and an assay to a testable question | 🚧 |
 | **Part IV — Independent work and contributions** | | |
 | 1. Reproduction and research reporting | Checking results and explaining the next decision | 🚧 |
-| [2. Making corrections and opening a pull request](community/ru/PR_requirement.md) | Sources, text revisions, and code checks | ✅ |
+| [2. Making corrections and opening a pull request](community/eng/PR_requirement.md) | Sources, text revisions, and code checks | ✅ |
 
 ## Quick start
 
-Open [Chapter 1](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md). The core material is readable directly in Markdown, including figures, equations, references, and exercises.
+Open [Chapter 1](course-material/eng/part1/Chapter1_From-Disease-to-Molecule.md). The core material is readable directly in Markdown, including figures, equations, references, and exercises.
 
 Run the practical exercises from the repository root:
 
 ```sh
-python3 course-material/ru/part2/code/identity.py
-python3 course-material/ru/part2/code/binding.py
+python3 course-material/eng/part2/code/identity.py
+python3 course-material/eng/part2/code/binding.py
 ```
 
 ## Learning path
@@ -86,14 +86,15 @@ python3 course-material/ru/part2/code/binding.py
 ```text
 zero-to-cdd-foundations/
 ├── course-material/
-│   └── ru/
+│   ├── ru/                    # Russian edition (same layout)
+│   └── eng/                   # English edition
 │       ├── part0/              # Before you learn
 │       ├── part1/              # Foundations; figures in images/
 │       ├── part2/              # Practical chapters; Python source in code/
 │       ├── part3/              # Real data and tools — planned
 │       ├── part4/              # Independent work — planned
 │       └── WRITING_TEMPLATE.md
-├── community/ru/               # Exercise discussions and contribution guidelines
+├── community/                 # English and Russian exercise discussions and guidelines
 ├── docs/.vitepress/            # Optional Markdown renderer
 ├── scripts/                   # Chapter checks and figure generation
 ├── tests/                     # Checks for the learning code
@@ -107,7 +108,7 @@ zero-to-cdd-foundations/
 
 ## Contributing
 
-Corrections to explanations, sources, figures, and code are welcome. Before editing a chapter, read the [writing template](course-material/ru/WRITING_TEMPLATE.md) and the [PR requirements](community/ru/PR_requirement.md).
+Corrections to explanations, sources, figures, and code are welcome. Before editing a chapter, read the [writing template](course-material/eng/WRITING_TEMPLATE.md) and the [PR requirements](community/eng/PR_requirement.md).
 
 Run these checks from the repository root:
 
@@ -116,7 +117,7 @@ python3 scripts/check_chapters.py --all
 python3 -m unittest discover -s tests
 ```
 
-[Exercise discussions](community/ru/Exercise-Discussions.md) are separate from the chapters. Use them to check your reasoning after attempting the exercises yourself.
+[Exercise discussions](community/eng/Exercise-Discussions.md) are separate from the chapters. Use them to check your reasoning after attempting the exercises yourself.
 
 ## Optional documentation build
 

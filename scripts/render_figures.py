@@ -13,6 +13,7 @@ import json
 import math
 import re
 import sys
+import argparse
 
 import matplotlib
 matplotlib.use('Agg')
@@ -21,13 +22,23 @@ from rdkit import Chem, rdBase
 from rdkit.Chem.Draw import rdMolDraw2D
 
 ROOT = Path(__file__).resolve().parents[1]
+LANGUAGE = 'ru'
+EN_LABELS = json.loads((ROOT/'scripts/figure_labels_en.json').read_text())
 OUT = ROOT/'course-material/ru/part1/images'
-OUT.mkdir(exist_ok=True)
+OUT.mkdir(parents=True, exist_ok=True)
 TEAL, INK, MUTED, ORANGE = '#187b73', '#243746', '#586b7a', '#b96a35'
 
 
+def tr(value):
+    if LANGUAGE == 'eng':
+        if re.search('[А-Яа-яЁё]', value) and value not in EN_LABELS:
+            raise ValueError(f'Missing English figure label: {value}')
+        return EN_LABELS.get(value, value)
+    return value
+
+
 def text(x,y,value,size=22,color=INK,anchor='middle',weight='400'):
-    return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="DejaVu Sans, sans-serif" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(value)}</text>'
+    return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="DejaVu Sans, sans-serif" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(tr(value))}</text>'
 
 
 def box(x,y,w,h,title,detail):
@@ -41,7 +52,7 @@ def arrow(x1,y1,x2,y2,dashed=False):
 
 def save_svg(name,body,height,title):
     source=f'''<svg xmlns="http://www.w3.org/2000/svg" width="760" height="{height}" viewBox="0 0 760 {height}" role="img">
-<title>{html.escape(title)}</title>
+<title>{html.escape(tr(title))}</title>
 <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="{MUTED}"/></marker></defs>
 <rect width="760" height="{height}" rx="12" fill="white"/>{body}</svg>'''
     (OUT/name).write_text(source)
@@ -100,7 +111,7 @@ def molecules():
             inner=re.search(r'<svg[\s\S]*?>([\s\S]*)</svg>',svg).group(1)
             body+=f'<g transform="translate({45+360*col},{base+38})">{inner}</g>'
             body+=text(200+360*col,base+199,label,19)
-            manifest.append({'smiles':smiles,'label':label})
+            manifest.append({'smiles':smiles,'label':tr(label)})
     save_svg('02-molecular-changes.svg',body,705,'Три разных типа изменений молекулы')
     return manifest
 
@@ -134,7 +145,7 @@ def curves():
     for kd,color,style in [(1,TEAL,'-'),(10,'#416a96','--'),(100,ORANGE,'-.')]:
         ax.plot(concentrations,[l/(kd+l) for l in concentrations],color=color,lw=2.4,ls=style,label=f'Kd = {kd} nM')
         ax.scatter([kd],[.5],s=30,color=color,zorder=3)
-    ax.set(xscale='log',xlabel='Свободный лиганд [L], nM',ylabel='Доля занятого белка, θ',ylim=(0,1.03),xlim=(.1,10000))
+    ax.set(xscale='log',xlabel=tr('Свободный лиганд [L], nM'),ylabel=tr('Доля занятого белка, θ'),ylim=(0,1.03),xlim=(.1,10000))
     ax.legend(frameon=False,loc='lower right')
     fig.savefig(OUT/'04-occupancy.svg',metadata={'Date':None,'Description':'Analytic educational model, no measurements.'})
     fig.savefig(OUT/'04-occupancy.png',dpi=160)
@@ -143,7 +154,7 @@ def curves():
     times=list(range(0,1501,5))
     for koff,color,style in [(.01,TEAL,'-'),(.001,ORANGE,'--')]:
         ax.plot(times,[math.exp(-koff*t) for t in times],color=color,lw=2.4,ls=style,label=f'koff = {koff:g} 1/s; τ = {1/koff:g} s')
-    ax.set(xlabel='Время после удаления лиганда, s',ylabel='Доля исходных комплексов',xlim=(0,1500),ylim=(0,1.03))
+    ax.set(xlabel=tr('Время после удаления лиганда, s'),ylabel=tr('Доля исходных комплексов'),xlim=(0,1500),ylim=(0,1.03))
     ax.legend(frameon=False)
     fig.savefig(OUT/'04-kinetics.svg',metadata={'Date':None,'Description':'Analytic dissociation without rebinding; educational parameters.'})
     fig.savefig(OUT/'04-kinetics.png',dpi=160)
@@ -151,8 +162,14 @@ def curves():
 
 
 if __name__=='__main__':
-    schematics(); molecules_manifest=molecules(); conformers(); curves()
-    (OUT/'provenance.json').write_text(json.dumps({'kind':'original teaching figures','rdkit':rdBase.rdkitVersion,'matplotlib':matplotlib.__version__,'molecules':molecules_manifest,'occupancy':{'model':'L/(Kd+L)','kd_nM':[1,10,100],'data_type':'analytical, hypothetical parameters'},'kinetics':{'model':'exp(-koff*t)','koff_per_s':[.01,.001],'data_type':'analytical, no rebinding'}},ensure_ascii=False,indent=2)+'\n')
-    for svg_path in OUT.glob('*.svg'):
-        svg_path.write_text('\n'.join(line.rstrip() for line in svg_path.read_text().splitlines())+'\n')
-    print('Rendered 7 original SVG figures and 2 PNG previews.')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--language', choices=['ru', 'eng', 'all'], default='ru')
+    args = parser.parse_args()
+    for LANGUAGE in (['ru', 'eng'] if args.language == 'all' else [args.language]):
+        OUT = ROOT / 'course-material' / LANGUAGE / 'part1/images'
+        OUT.mkdir(parents=True, exist_ok=True)
+        schematics(); molecules_manifest=molecules(); conformers(); curves()
+        (OUT/'provenance.json').write_text(json.dumps({'kind':'original teaching figures','language':LANGUAGE,'rdkit':rdBase.rdkitVersion,'matplotlib':matplotlib.__version__,'molecules':molecules_manifest,'occupancy':{'model':'L/(Kd+L)','kd_nM':[1,10,100],'data_type':'analytical, hypothetical parameters'},'kinetics':{'model':'exp(-koff*t)','koff_per_s':[.01,.001],'data_type':'analytical, no rebinding'}},ensure_ascii=False,indent=2)+'\n')
+        for svg_path in OUT.glob('*.svg'):
+            svg_path.write_text('\n'.join(line.rstrip() for line in svg_path.read_text().splitlines())+'\n')
+        print('Rendered 7 original SVG figures and 2 PNG previews.')

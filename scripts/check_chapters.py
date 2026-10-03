@@ -35,9 +35,12 @@ for p in files:
     if p.name.startswith('Chapter'):
         chapter_count+=1
         if len(re.findall(r'^# ',clean,re.M))!=1:errors.append(f'{p.name}: expected one H1')
-        for marker in ['## 1. Чему вы научитесь','## Источники и дальнейшее чтение']:
+        english = 'eng' in p.relative_to(root).parts
+        markers = ['## 1. Learning Objectives', '## References and Further Reading'] if english else ['## 1. Чему вы научитесь','## Источники и дальнейшее чтение']
+        for marker in markers:
             if marker not in content:errors.append(f'{p.name}: missing {marker}')
-        if not re.search(r'^## \d+\. Итоги и задачи',content,re.M):errors.append(f'{p.name}: missing exercises')
+        summary = r'^## \d+\. Summary and Exercises' if english else r'^## \d+\. Итоги и задачи'
+        if not re.search(summary,content,re.M):errors.append(f'{p.name}: missing exercises')
         numbers=[int(x) for x in re.findall(r'^## (\d+)\.',content,re.M)]
         if numbers!=list(range(1,len(numbers)+1)):errors.append(f'{p.name}: non-sequential H2 numbering')
         if '<BindingExplorer' in content or '<ClientOnly' in content:errors.append(f'{p.name}: frontend-only content')
