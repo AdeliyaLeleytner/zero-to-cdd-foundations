@@ -1,0 +1,48 @@
+{
+  "kind": "original teaching figures",
+  "rdkit": "2026.03.6",
+  "matplotlib": "3.11.2",
+  "molecules": [
+    {
+      "smiles": "CCO",
+      "label": "Этанол"
+    },
+    {
+      "smiles": "COC",
+      "label": "Диметиловый эфир"
+    },
+    {
+      "smiles": "C[C@H](O)C(=O)O",
+      "label": "Энантиомер 1"
+    },
+    {
+      "smiles": "C[C@@H](O)C(=O)O",
+      "label": "Энантиомер 2"
+    },
+    {
+      "smiles": "CC(=O)O",
+      "label": "Уксусная кислота"
+    },
+    {
+      "smiles": "CC(=O)[O-]",
+      "label": "Ацетат"
+    }
+  ],
+  "occupancy": {
+    "model": "L/(Kd+L)",
+    "kd_nM": [
+      1,
+      10,
+      100
+    ],
+    "data_type": "analytical, hypothetical parameters"
+  },
+  "kinetics": {
+    "model": "exp(-koff*t)",
+    "koff_per_s": [
+      0.01,
+      0.001
+    ],
+    "data_type": "analytical, no rebinding"
+  }
+}

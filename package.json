@@ -1,0 +1,26 @@
+{
+  "name": "zero-to-cdd-foundations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "check": "python3 scripts/check_chapters.py --all && python3 -m unittest discover -s tests"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "markdown-it-mathjax3": "4.3.2"
+  },
+  "packageManager": "pnpm@10.21.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "6.4.3",
+      "@xmldom/xmldom": "0.9.12"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
