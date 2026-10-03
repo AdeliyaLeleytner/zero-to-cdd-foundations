@@ -1,127 +1,134 @@
-# zero-to-cdd-foundations
+<div align="center">
+  <h1>zero-to-cdd-foundations</h1>
+  <p>
+    <a href="./README.md"><img src="https://img.shields.io/badge/English-2563eb?style=for-the-badge" alt="English"></a>
+    <a href="./README_ru.md"><img src="https://img.shields.io/badge/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-6b7280?style=for-the-badge" alt="Русский"></a>
+  </p>
+</div>
 
-### От устройства молекул к основам Computational Drug Discovery
+### From molecular structure to the foundations of Computational Drug Discovery
 
-Учебный курс: понять молекулы, белки и связывание, самостоятельно разобрать простые вычислительные модели, затем перейти к реальным данным и исследовательским инструментам.
+A hands-on course: understand molecules, proteins, and binding; work through simple computational models; then explore real research data and tools.
 
-> **Статус:** Part 0, главы 1–4 Part I и два практикума Part II написаны. Остальная программа находится в разработке. Сейчас доступна русская версия.
+> **Course status:** Part 0, Chapters 1–4 of Part I, and two practical chapters in Part II are written. The remaining material is under development. **Course chapters are currently available in Russian.** This repository overview is available in [English](README.md) and [Русский](README_ru.md).
 
-## О курсе
+## About
 
-Вычислительное открытие лекарств начинается с понимания предмета. Что именно мы хотим изменить в биологической системе? Какие свойства молекулы определяют её поведение? Что измеряет эксперимент и на какой вопрос отвечает предсказание модели?
+Computational drug discovery begins with understanding the problem. What do we want to change in a biological system? Which properties of a molecule determine its behavior? What does an experiment measure, and what question does a model's prediction answer?
 
-Первая часть курса создаёт общую картину: от задачи drug discovery и химического строения до белков, равновесия связывания и экспериментальных измерений. Во второй части читатель работает с небольшими реализациями и проверяет, как исходные предположения влияют на результат. Затем мы перейдём к устройству реальных данных и инструментов.
+The first part of this course builds a coherent picture: from the drug discovery problem and chemical structure to proteins, binding equilibria, and experimental measurements. In the second part, you work with small implementations and examine how their assumptions shape the results. Later sections connect these models to real data and research tools.
 
-Это том 0 серии **Computational Drug Discovery**. Следующие самостоятельные репозитории посвящены Target Discovery, Hit Discovery, Structure-Based Drug Design, Target Deconvolution и Lead Optimization.
+This is Volume 0 of the **Computational Drug Discovery** series. Subsequent repositories will cover Target Discovery, Hit Discovery, Structure-Based Drug Design, Target Deconvolution, and Lead Optimization.
 
-## Чему вы научитесь
+## What you will learn
 
-- Читать молекулярные структуры и различать связность, стереохимию, конформации и протонирование.
-- Связывать структуру белка, его состояния и функцию.
-- Выводить простые модели связывания и объяснять численные результаты.
-- Различать экспериментальное наблюдение, вычислительное предсказание и исследовательский вывод.
-- Работать с данными и кодом так, чтобы результат можно было воспроизвести.
+- Read molecular structures and distinguish connectivity, stereochemistry, conformations, and protonation states.
+- Connect a protein's structure and conformational states to its function.
+- Derive simple binding models and explain their numerical results.
+- Distinguish experimental observations, computational predictions, and scientific conclusions.
+- Work with data and code so that others can reproduce your results.
 
-## Предварительные знания
+## Prerequisites
 
-- **Математика:** школьная алгебра; необходимые логарифмы и смысл производной объясняются в тексте.
-- **Программирование:** базовый Python для практикумов. Для чтения Part I код запускать необязательно.
-- **Химия и биология:** основные понятия вводятся в ходе курса.
-- **Оборудование:** для готовых практикумов достаточно CPU, внешние Python-библиотеки не нужны.
+- **Mathematics:** school-level algebra. Logarithms and the meaning of a derivative are explained where needed.
+- **Programming:** basic Python for the practical chapters. You can read Part I without running code.
+- **Chemistry and biology:** core concepts are introduced throughout the course.
+- **Hardware:** the completed practical exercises run on CPU and require no third-party Python libraries.
 
-## Программа
+## Syllabus
 
-Статусы: ✅ написано и проверено технически · 🚧 планируется. Первая редакция ещё не проходила пробное обучение на группе студентов.
+Status legend: ✅ written and technically checked · 🚧 planned. This first edition has not yet been piloted with a group of learners. **All linked course material below is in Russian.**
 
-| Глава | Содержание | Статус |
+| Chapter | Key content | Status |
 | --- | --- | --- |
-| **Part 0 — Перед началом** | | |
-| [0.1 Как учиться и участвовать в открытом курсе](course-material/ru/part0/Part0-Learning-and-Open-Science.md) | Работа с объяснениями, источниками и задачами | ✅ |
-| [0.2 Подготовка окружения](course-material/ru/part0/Part0-Environment-Setup.md) | Python, первый запуск, проверки | ✅ |
-| **Part I — Основы** | | |
-| [1. От болезни к молекуле](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md) | Target, hit, lead; вычисления и эксперимент | ✅ |
-| [2. Как читать молекулу](course-material/ru/part1/Chapter2_Reading-Molecules.md) | Связи, форма, стереохимия, заряд и среда | ✅ |
-| [3. Белок в движении](course-material/ru/part1/Chapter3_Proteins-in-Motion.md) | Последовательность, структура, состояния и функция | ✅ |
-| [4. Что значит «связывается»](course-material/ru/part1/Chapter4_Molecular-Binding.md) | Kd, occupancy, свободная энергия и кинетика | ✅ |
-| 5. Что измеряет эксперимент | Assays, dose–response, Kd / Ki / IC50 / EC50 | 🚧 |
-| 6. Молекулы и белки как данные | SMILES, графы, fingerprints, PDB и идентификаторы | 🚧 |
-| 7. Что умеет вычислительная модель | Физические и ML-модели, baseline и проверка предсказаний | 🚧 |
-| **Part II — Разбираем модели своими руками** | | |
-| [1. Молекулярная идентичность](course-material/ru/part2/Chapter1_Molecular-Identity.md) | Графы, метки атомов и перенумерация | ✅ |
-| [2. Модель связывания](course-material/ru/part2/Chapter2_Binding-Model.md) | Occupancy, баланс вещества, энергия и время жизни | ✅ |
-| 3. Первый исследовательский разбор | Структуры и измерения → воспроизводимый анализ | 🚧 |
-| **Part III — Переходим к реальным инструментам** | | |
-| 1. Как RDKit представляет молекулу | Связь изученных моделей с настоящим toolkit | 🚧 |
-| 2. Как читать структурные и биохимические данные | От записи PDB и assay к проверяемому вопросу | 🚧 |
-| **Part IV — Самостоятельная работа и вклад в курс** | | |
-| 1. Воспроизведение и исследовательский отчёт | Проверка результата и объяснение следующего решения | 🚧 |
-| [2. Работа с исправлениями и pull request](community/ru/PR_requirement.md) | Источники, правки текста, проверка кода | ✅ |
+| **Part 0 — Before you learn** | | |
+| [0.1 Learning and participating in an open course](course-material/ru/part0/Part0-Learning-and-Open-Science.md) | Working with explanations, sources, and exercises | ✅ |
+| [0.2 Environment setup](course-material/ru/part0/Part0-Environment-Setup.md) | Python, first runs, and checks | ✅ |
+| **Part I — Foundations** | | |
+| [1. From disease to molecule](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md) | Targets, hits, and leads; computation and experiment | ✅ |
+| [2. Reading molecules](course-material/ru/part1/Chapter2_Reading-Molecules.md) | Bonds, shape, stereochemistry, charge, and environment | ✅ |
+| [3. Proteins in motion](course-material/ru/part1/Chapter3_Proteins-in-Motion.md) | Sequence, structure, states, and function | ✅ |
+| [4. What does “binding” mean?](course-material/ru/part1/Chapter4_Molecular-Binding.md) | Kd, occupancy, free energy, and kinetics | ✅ |
+| 5. What does an experiment measure? | Assays, dose–response, Kd / Ki / IC50 / EC50 | 🚧 |
+| 6. Molecules and proteins as data | SMILES, graphs, fingerprints, PDB, and identifiers | 🚧 |
+| 7. What can a computational model tell us? | Physical and ML models, baselines, and prediction evaluation | 🚧 |
+| **Part II — Working through models yourself** | | |
+| [1. Molecular identity](course-material/ru/part2/Chapter1_Molecular-Identity.md) | Graphs, atom labels, and renumbering | ✅ |
+| [2. A binding model](course-material/ru/part2/Chapter2_Binding-Model.md) | Occupancy, mass balance, energy, and complex lifetime | ✅ |
+| 3. Your first research analysis | Structures and measurements → reproducible analysis | 🚧 |
+| **Part III — Exploring real tools** | | |
+| 1. How RDKit represents a molecule | Connecting the models you have learned to a real toolkit | 🚧 |
+| 2. Reading structural and biochemical data | From a PDB entry and an assay to a testable question | 🚧 |
+| **Part IV — Independent work and contributions** | | |
+| 1. Reproduction and research reporting | Checking results and explaining the next decision | 🚧 |
+| [2. Making corrections and opening a pull request](community/ru/PR_requirement.md) | Sources, text revisions, and code checks | ✅ |
 
-## Быстрый старт
+## Quick start
 
-Откройте [главу 1](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md). Весь основной материал читается непосредственно в Markdown, включая изображения, формулы, ссылки и задачи.
+Open [Chapter 1](course-material/ru/part1/Chapter1_From-Disease-to-Molecule.md). The core material is readable directly in Markdown, including figures, equations, references, and exercises.
 
-Для практикумов из корня репозитория:
+Run the practical exercises from the repository root:
 
 ```sh
 python3 course-material/ru/part2/code/identity.py
 python3 course-material/ru/part2/code/binding.py
 ```
 
-## Путь обучения
+## Learning path
 
-1. Прочитайте Part I, чтобы понять предмет и смысл моделей.
-2. Пройдите доступные практикумы Part II: сначала предскажите результат, затем запустите код и объясните наблюдение.
-3. По мере готовности Part III сопоставьте учебные модели с реальными инструментами и данными.
-4. Завершите самостоятельный разбор и оформите его так, чтобы другой читатель мог его повторить.
+1. Read Part I to understand the subject and the meaning of the models.
+2. Work through the available practical chapters in Part II: predict the result, run the code, and explain what you observe.
+3. As Part III becomes available, connect the learning models to real tools and data.
+4. Complete an independent analysis and document it so another reader can reproduce it.
 
-## Структура репозитория
+## Project structure
 
 ```text
 zero-to-cdd-foundations/
 ├── course-material/
 │   └── ru/
-│       ├── part0/              # Перед началом
-│       ├── part1/              # Основы; изображения в images/
-│       ├── part2/              # Практикумы; исходный Python в code/
-│       ├── part3/              # Реальные данные и инструменты — план
-│       ├── part4/              # Самостоятельная работа — план
+│       ├── part0/              # Before you learn
+│       ├── part1/              # Foundations; figures in images/
+│       ├── part2/              # Practical chapters; Python source in code/
+│       ├── part3/              # Real data and tools — planned
+│       ├── part4/              # Independent work — planned
 │       └── WRITING_TEMPLATE.md
-├── community/ru/               # Обсуждение задач и правила вклада
-├── docs/.vitepress/             # Вспомогательный рендер Markdown
-├── scripts/                    # Проверка глав, ссылок и генерация рисунков
-├── tests/                      # Проверки учебного кода
-├── references/                 # Источники и журнал проверки
+├── community/ru/               # Exercise discussions and contribution guidelines
+├── docs/.vitepress/            # Optional Markdown renderer
+├── scripts/                   # Chapter checks and figure generation
+├── tests/                     # Checks for the learning code
+├── references/                # Sources and verification records
 ├── .github/workflows/          # CI
-├── README.md                   # Основной вход и программа
+├── README.md                  # English overview (default)
+├── README_ru.md               # Russian overview
 ├── package.json
 └── pnpm-lock.yaml
 ```
 
-## Участие
+## Contributing
 
-Исправления объяснений, источников, рисунков и кода приветствуются. Перед изменением главы прочитайте [шаблон](course-material/ru/WRITING_TEMPLATE.md), затем [требования к PR](community/ru/PR_requirement.md).
+Corrections to explanations, sources, figures, and code are welcome. Before editing a chapter, read the [writing template](course-material/ru/WRITING_TEMPLATE.md) and the [PR requirements](community/ru/PR_requirement.md).
 
-Проверки из корня репозитория:
+Run these checks from the repository root:
 
 ```sh
 python3 scripts/check_chapters.py --all
 python3 -m unittest discover -s tests
 ```
 
-[Разборы задач](community/ru/Exercise-Discussions.md) находятся отдельно от глав. Они предназначены для сверки после собственной попытки.
+[Exercise discussions](community/ru/Exercise-Discussions.md) are separate from the chapters. Use them to check your reasoning after attempting the exercises yourself.
 
-## Вспомогательная сборка документации
+## Optional documentation build
 
-Как и в репозитории-образце, VitePress только отображает исходные Markdown-файлы. Сайт не нужен для чтения или выполнения практикумов. Для работы с этой необязательной сборкой нужны Node.js 20+ и pnpm 10.21.0:
+As in the reference repository, VitePress renders the source Markdown files. You do not need the site to read the course or run the exercises. This optional build requires Node.js 20+ and pnpm 10.21.0:
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm build
 ```
 
-## Источники и происхождение
+## Sources and provenance
 
-Образец структуры и организации — [datawhalechina/zero-to-sglang](https://github.com/datawhalechina/zero-to-sglang). Тексты, задачи и схемы этого курса оригинальные. Библиографические ссылки стоят в каждой главе; границы проверки зафиксированы в [SOURCES.md](references/SOURCES.md).
+The structure and organization follow [datawhalechina/zero-to-sglang](https://github.com/datawhalechina/zero-to-sglang). The text, exercises, and figures in this course are original. Each chapter includes references; [SOURCES.md](references/SOURCES.md) records what has been checked and the limits of that verification.
 
-Это локальный Git-репозиторий. Публичный адрес и лицензия будущего выпуска пока не определены; несуществующие GitHub/Colab-ссылки не используются.
+This is currently a local Git repository. Its public address and release license have not yet been chosen; no placeholder GitHub or Colab links are presented as working resources.

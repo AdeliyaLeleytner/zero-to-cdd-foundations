@@ -9,7 +9,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--all',action='store_true',help='Check all authored material')
 parser.add_argument('files',nargs='*')
 args=parser.parse_args()
-files=[root/p for p in args.files] if args.files else [root/'README.md',*sorted((root/'course-material').rglob('*.md')),*sorted((root/'community').rglob('*.md'))]
+files=[root/p for p in args.files] if args.files else [*sorted(root.glob('README*.md')),*sorted((root/'course-material').rglob('*.md')),*sorted((root/'community').rglob('*.md'))]
 files=[p for p in files if p.name!='WRITING_TEMPLATE.md']
 errors=[];links=0;chapter_count=0
 class AssetParser(HTMLParser):

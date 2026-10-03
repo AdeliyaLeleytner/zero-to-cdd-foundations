@@ -64,8 +64,8 @@
 Для практикумов из корня репозитория:
 
 ```sh
-python3 part2/code/identity.py
-python3 part2/code/binding.py
+python3 course-material/ru/part2/code/identity.py
+python3 course-material/ru/part2/code/binding.py
 ```
 
 ## Путь обучения
