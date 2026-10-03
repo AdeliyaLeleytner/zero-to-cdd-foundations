@@ -65,6 +65,11 @@
 
 ## Быстрый старт
 
+```sh
+git clone https://github.com/AdeliyaLeleytner/zero-to-cdd-foundations.git
+cd zero-to-cdd-foundations
+```
+
 Откройте [главу 1](part1/Chapter1_From-Disease-to-Molecule.md). Весь основной материал читается непосредственно в Markdown, включая изображения, формулы, ссылки и задачи.
 
 Для практикумов из корня репозитория:
@@ -132,4 +137,4 @@ pnpm build
 
 Образец структуры и организации — [datawhalechina/zero-to-sglang](https://github.com/datawhalechina/zero-to-sglang). Тексты, задачи и схемы этого курса оригинальные. Библиографические ссылки стоят в каждой главе; границы проверки зафиксированы в [SOURCES.md](../../references/SOURCES_ru.md).
 
-Это локальный Git-репозиторий. Публичный адрес и лицензия будущего выпуска пока не определены; несуществующие GitHub/Colab-ссылки не используются.
+Публичный репозиторий: [AdeliyaLeleytner/zero-to-cdd-foundations](https://github.com/AdeliyaLeleytner/zero-to-cdd-foundations). Лицензия выпуска пока не выбрана.

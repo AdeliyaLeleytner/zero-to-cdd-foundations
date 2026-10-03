@@ -65,6 +65,11 @@ Status legend: ✅ written and technically checked · 🚧 planned. This first e
 
 ## Quick start
 
+```sh
+git clone https://github.com/AdeliyaLeleytner/zero-to-cdd-foundations.git
+cd zero-to-cdd-foundations
+```
+
 Open [Chapter 1](course-material/eng/part1/Chapter1_From-Disease-to-Molecule.md). The core material is readable directly in Markdown, including figures, equations, references, and exercises.
 
 Run the practical exercises from the repository root:
@@ -132,4 +137,4 @@ pnpm build
 
 The structure and organization follow [datawhalechina/zero-to-sglang](https://github.com/datawhalechina/zero-to-sglang). The text, exercises, and figures in this course are original. Each chapter includes references; [SOURCES.md](references/SOURCES.md) records what has been checked and the limits of that verification.
 
-This is currently a local Git repository. Its public address and release license have not yet been chosen; no placeholder GitHub or Colab links are presented as working resources.
+Public repository: [AdeliyaLeleytner/zero-to-cdd-foundations](https://github.com/AdeliyaLeleytner/zero-to-cdd-foundations). A release license has not yet been selected.
